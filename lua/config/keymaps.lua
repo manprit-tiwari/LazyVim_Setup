@@ -10,6 +10,7 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- Save file and quit
 keymap.set("n", "<Leader>w", ":update<Return>", opts)
+keymap.set("n", "<Leader>W", ":wa<Return>", opts)
 keymap.set("n", "<Leader>q", ":quit<Return>", opts)
 keymap.set("n", "<Leader>Q", ":qa<Return>", opts)
 
@@ -17,8 +18,20 @@ keymap.set("n", "<Leader>Q", ":qa<Return>", opts)
 keymap.set("n", "<Leader>f", ":NvimTreeFindFile<Return>", opts)
 keymap.set("n", "<Leader>t", ":NvimTreeToggle<Return>", opts)
 
+--  See `:help wincmd` for a list of all window commands
+keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
+keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
+keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
+keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+
 -- Escape insert mode
 keymap.set("i", "jk", "<Esc>", opts)
+
+-- TIP: Disable arrow keys in normal mode
+keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
+keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
+keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
+keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
 -- Tabs
 keymap.set("n", "te", ":tabedit")
