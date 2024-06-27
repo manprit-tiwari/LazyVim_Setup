@@ -10,6 +10,7 @@ return {
         "tailwindcss-language-server",
         "typescript-language-server",
         "css-lsp",
+        "angular-language-server",
       })
     end,
   },
@@ -28,10 +29,19 @@ return {
           end,
         },
         tsserver = {
+          init_options = { hostInfo = "neovim" },
           root_dir = function(...)
-            return require("lspconfig.util").root_pattern(".git")(...)
+            return require("lspconfig.util").root_pattern("tsconfig.json", "jsconfig.json", "package.json", ".git")(...)
           end,
-          single_file_support = false,
+          filetypes = {
+            "javascript",
+            "javascriptreact",
+            "javascript.jsx",
+            "typescript",
+            "typescriptreact",
+            "typescript.tsx",
+          },
+          single_file_support = true,
           settings = {
             typescript = {
               inlayHints = {
