@@ -28,6 +28,18 @@ return {
             return require("lspconfig.util").root_pattern(".git")(...)
           end,
         },
+        angularls = {
+          root_dir = function(...)
+            return require("lspconfig.util").root_pattern("angular.json", ".git")(...)
+          end,
+          single_file_support = true,
+          settings = {
+            angular = {
+              enableIvy = true,
+              -- Add more Angular specific settings here if needed
+            },
+          },
+        },
         tsserver = {
           init_options = { hostInfo = "neovim" },
           root_dir = function(...)
