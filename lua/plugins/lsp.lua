@@ -24,8 +24,9 @@ return {
       servers = {
         cssls = {},
         tailwindcss = {
+          enabled = false,
           root_dir = function(...)
-            return require("lspconfig.util").root_pattern(".git")(...)
+            return require("lspconfig.util").root_pattern("tailwind.config.js")(...)
           end,
         },
         angularls = {
@@ -40,7 +41,7 @@ return {
             },
           },
         },
-        tsserver = {
+        ts_ls = {
           init_options = { hostInfo = "neovim" },
           root_dir = function(...)
             return require("lspconfig.util").root_pattern("tsconfig.json", "jsconfig.json", "package.json", ".git")(...)
