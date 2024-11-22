@@ -39,4 +39,5 @@ keymap.set("n", "<C-S-l>", "<C-w>>")
 keymap.set("n", "<C-S-k>", "<C-w>+")
 keymap.set("n", "<C-S-j>", "<C-w>-")
 
+-- Terminal
 keymap.set("t", "<Leader>ht", "<cmd>close<cr>", { desc = "Hide Terminal" })

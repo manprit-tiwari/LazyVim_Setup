@@ -73,6 +73,7 @@ return {
   -- filename
   {
     "b0o/incline.nvim",
+    version = false,
     dependencies = {},
     event = "BufReadPre",
     priority = 1200,
