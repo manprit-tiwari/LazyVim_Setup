@@ -21,4 +21,7 @@ return {
 
   -- Editor
   { import = "lazyvim.plugins.extras.editor.inc-rename" },
+
+  -- DAP
+  { import = "lazyvim.plugins.extras.dap.core" },
 }
