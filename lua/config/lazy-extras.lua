@@ -6,6 +6,8 @@ return {
 
   -- CODING
   { import = "lazyvim.plugins.extras.coding.blink" },
+  { import = "lazyvim.plugins.extras.coding.yanky" },
+  { import = "lazyvim.plugins.extras.coding.neogen" },
 
   -- AI
   { import = "lazyvim.plugins.extras.ai.copilot" },
